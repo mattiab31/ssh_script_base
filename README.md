@@ -77,9 +77,9 @@ The key's randomart image is:
 Run the OpenSSH Server on Port: 12345
 Wait...
 Setup iniziale completato.
-L'indirizzo IP privato del notebook è: 10.29.63.153
+L'indirizzo IP privato del notebook è: 10.x.x.x
 Per connettersi usare la chiave, la porta e l'indirizzo ip mostrati sopra
-ssh -i <key_name>.key datascience@10.29.63.153 -p  12345
+ssh -i <key_name>.key datascience@10.x.x.x -p  12345
 File di stato aggiornato a First_Run=False.
 ```
 
