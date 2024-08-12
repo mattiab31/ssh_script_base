@@ -59,7 +59,7 @@ if [ ! -f "$STATE_FILE" ] || grep -q "First_Run=True" "$STATE_FILE"; then
     echo "Wait..."
     sleep 5
     echo "Setup iniziale completato."
-    private_ip=$(python3 $CURRENT_DIR/ssh_script_base/nb_ip.py)
+    private_ip=$(python3 $CURRENT_DIR/nb_ip.py)
     echo "L'indirizzo IP privato del notebook è: $private_ip"
     echo "Per connettersi usare la chiave, la porta e l'indirizzo ip mostrati sopra"
     echo "ssh -i <key_name>.key datascience@$private_ip -p  $PORT"
@@ -82,7 +82,7 @@ else
     sleep 5
     echo "Start avvenuto con successo."
 
-    private_ip=$(python3 $CURRENT_DIR/ssh_script_base/nb_ip.py)
+    private_ip=$(python3 $CURRENT_DIR/nb_ip.py)
     echo "L'indirizzo IP privato del notebook è: $private_ip"
     echo "Per connettersi usare la chiave mostrata sopra con il seguente comando:"
     echo "ssh -i <key_name>.key datascience@$private_ip -p  $PORT"
