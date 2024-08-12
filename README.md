@@ -5,15 +5,9 @@
   - [Introduction](#introduction)
   - [Prerequisite](#prerequisite)
   - [Step-by-Step Guide](#step-by-step-guide)
-    - [Reveal the Notebook Private IP](#reveal-the-notebook-private-ip)
+    - [Runtime Configuration](#runtime-configuration)
     - [Run the Script](#run-the-script)
-    - [Enable OpenSSH Server Script](#enable-openssh-server-script)
-    - [Run the `enablessh.sh` Script](#run-the-enablesshsh-script)
-    - [Store the Private Key](#store-the-private-key)
-    - [SSH Connect](#ssh-connect)
     - [VSCode Configuration](#vscode-configuration)
-    - [Create new file startssh.sh Script](#create-new-file-startssh.sh-Script)
-    - [Run the startssh.sh Script](#run-the-startssh.sh-Script)
 
 
 ## Introduction
@@ -29,7 +23,9 @@ This guide outlines the steps required to enable SSH tunneling.
 ### Runtime Configuration
 You can either clone this repository or configure it as  `Runtime Configuration` during creation.
 
-You will have a  `Repos` folder with following files:
+
+### Run the Script
+You will have a `Repos` folder inside your NotebookSession, with following files:
 - install_start_ssh.sh
 - nb_ip.py
 - ssh_script_state.txt
