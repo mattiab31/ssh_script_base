@@ -23,6 +23,10 @@ This guide outlines the steps required to enable SSH tunneling.
 ### Runtime Configuration
 You can either clone this repository or configure it as  `Runtime Configuration` during creation.
 
+You can use up to 3 public Git repositories for the notebook session. The notebook must have public internet access to connect.
+
+![Runtime Configuration Section](https://github.com/mattiab31/ssh_script_base/blob/main/RuntimeConfig.png)
+
 
 ### Run the Script
 You will have a `Repos` folder inside your NotebookSession, with following files:
@@ -30,7 +34,8 @@ You will have a `Repos` folder inside your NotebookSession, with following files
 - nb_ip.py
 - ssh_script_state.txt
 
-You need to open a new Terminal and run the install_start_ssh.sh Script
+You need to open a new Terminal and run the install_start_ssh.sh Script:
+
 `sh install_start_ssh.sh`
 
 
