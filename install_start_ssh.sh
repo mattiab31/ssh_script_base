@@ -8,7 +8,7 @@ CURRENT_DIR=$(pwd)
 PORT=12345
 
 # Percorso del file di stato
-STATE_FILE="$CURRENT_DIR/ssh_script_base/ssh_script_state.txt"
+STATE_FILE="$CURRENT_DIR/ssh_script_state.txt"
 
 # Funzione per creare o aggiornare il file di stato
 function update_state_file() {
