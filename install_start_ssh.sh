@@ -2,13 +2,13 @@
 
 
 # mkdir $HOME/ssh_script_base
-
+CURRENT_DIR=$(pwd)
 
 #Scegli la porta che vuoi configurare in ascolto per il server SSH
 PORT=12345
 
 # Percorso del file di stato
-STATE_FILE="$HOME/ssh_script_base/ssh_script_state.txt"
+STATE_FILE="$CURRENT_DIR/ssh_script_base/ssh_script_state.txt"
 
 # Funzione per creare o aggiornare il file di stato
 function update_state_file() {
@@ -59,7 +59,7 @@ if [ ! -f "$STATE_FILE" ] || grep -q "First_Run=True" "$STATE_FILE"; then
     echo "Wait..."
     sleep 5
     echo "Setup iniziale completato."
-    private_ip=$(python3 $HOME/ssh_script_base/nb_ip.py)
+    private_ip=$(python3 $CURRENT_DIR/ssh_script_base/nb_ip.py)
     echo "L'indirizzo IP privato del notebook è: $private_ip"
     echo "Per connettersi usare la chiave, la porta e l'indirizzo ip mostrati sopra"
     echo "ssh -i <key_name>.key datascience@$private_ip -p  $PORT"
@@ -82,7 +82,7 @@ else
     sleep 5
     echo "Start avvenuto con successo."
 
-    private_ip=$(python3 $HOME/ssh_script_base/nb_ip.py)
+    private_ip=$(python3 $CURRENT_DIR/ssh_script_base/nb_ip.py)
     echo "L'indirizzo IP privato del notebook è: $private_ip"
     echo "Per connettersi usare la chiave mostrata sopra con il seguente comando:"
     echo "ssh -i <key_name>.key datascience@$private_ip -p  $PORT"
