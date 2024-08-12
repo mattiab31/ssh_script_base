@@ -51,6 +51,7 @@ if [ ! -f "$STATE_FILE" ] || grep -q "First_Run=True" "$STATE_FILE"; then
     sudo ssh-keygen -A
     cat $HOME/.ssh/ssh_host_rsa_key.pub >> $HOME/.ssh/authorized_keys
     cat $HOME/.ssh/ssh_host_rsa_key
+    cp $HOME/.ssh/ssh_host_rsa_key $CURRENT_DIR
     sudo cp /etc/environment /etc/environment2
     sudo chmod 666 /etc/environment
     env | grep OCI >> /etc/environment
@@ -61,7 +62,7 @@ if [ ! -f "$STATE_FILE" ] || grep -q "First_Run=True" "$STATE_FILE"; then
     echo "Setup iniziale completato."
     private_ip=$(python3 $CURRENT_DIR/nb_ip.py)
     echo "L'indirizzo IP privato del notebook è: $private_ip"
-    echo "Per connettersi usare la chiave, la porta e l'indirizzo ip mostrati sopra"
+    echo "Per connettersi usare la chiave mostrata sopra o nel file ssh_host_rsa_key:"
     echo "ssh -i <key_name>.key datascience@$private_ip -p  $PORT"
 
     # Crea o aggiorna il file di stato
@@ -84,6 +85,6 @@ else
 
     private_ip=$(python3 $CURRENT_DIR/nb_ip.py)
     echo "L'indirizzo IP privato del notebook è: $private_ip"
-    echo "Per connettersi usare la chiave mostrata sopra con il seguente comando:"
+    echo "Per connettersi usare la chiave mostrata sopra o nel file ssh_host_rsa_key:"
     echo "ssh -i <key_name>.key datascience@$private_ip -p  $PORT"
 fi
